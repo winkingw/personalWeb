@@ -17,7 +17,6 @@ const photographyLabel = computed(() => locale.value === 'zh' ? '摄影' : 'Phot
     class="relative isolate overflow-hidden text-[#161616] dark:text-[#161616]"
   >
     <div class="absolute inset-x-0 top-0 h-40 bg-white/70 blur-3xl" aria-hidden="true" />
-    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#f7f7f4] to-transparent" aria-hidden="true" />
 
     <div class="relative min-h-[calc(100svh-4rem)] px-4 py-10 sm:px-6 lg:px-8">
       <div
