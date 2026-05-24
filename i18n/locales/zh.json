@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "blog": "博客",
+    "projects": "项目",
+    "essays": "随笔",
+    "contact": "联系"
+  },
+  "footer": {
+    "links": "链接",
+    "social": "社交",
+    "copyright": "© {year} {name}。保留所有权利。"
+  },
+  "blog": {
+    "title": "博客",
+    "description": "技术文章、教程与 Web 开发思考。",
+    "searchPlaceholder": "搜索文章...",
+    "noPosts": "暂无文章。",
+    "notFound": "文章未找到",
+    "allPosts": "← 返回博客列表",
+    "previousPost": "上一篇文章",
+    "nextPost": "下一篇文章",
+    "relatedPosts": "相关文章",
+    "minRead": "{minutes} 分钟阅读",
+    "wordCount": "{count} 字"
+  },
+  "projects": {
+    "title": "项目",
+    "description": "我构建的作品 — 从 Web 应用到 CLI 工具和开源库。",
+    "noProjects": "暂无项目。",
+    "notFound": "项目未找到",
+    "allProjects": "← 全部项目"
+  },
+  "essays": {
+    "title": "随笔",
+    "description": "个人随笔与感想 — 关于技术、生活以及其间的一切。",
+    "noEssays": "暂无随笔。",
+    "notFound": "随笔未找到",
+    "allEssays": "← 全部随笔"
+  },
+  "about": {
+    "title": "关于",
+    "skills": "技能",
+    "experience": "经历",
+    "connect": "联系"
+  },
+  "contact": {
+    "title": "联系",
+    "description": "有问题或想合作？给我发消息。",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "send": "发送消息",
+      "sending": "发送中...",
+      "honeypot": "请留空"
+    },
+    "validation": {
+      "nameRequired": "请输入姓名",
+      "emailRequired": "请输入邮箱",
+      "emailInvalid": "邮箱格式不正确",
+      "subjectRequired": "请输入主题",
+      "messageRequired": "请输入消息",
+      "messageMinLength": "消息至少需要10个字符",
+      "waitBeforeSubmit": "请稍后再提交。",
+      "error": "出了点问题，请重试。",
+      "sendFailed": "发送失败，请重试。"
+    },
+    "success": {
+      "title": "消息已发送！",
+      "message": "感谢你的来信，我会尽快回复。"
+    },
+    "social": {
+      "title": "与我联系",
+      "description": "在这些平台上找到我，或直接发送邮件。"
+    }
+  },
+  "theme": {
+    "switchToLight": "切换到亮色模式",
+    "switchToDark": "切换到暗色模式"
+  },
+  "home": {
+    "hero": {
+      "viewProjects": "查看项目",
+      "getInTouch": "联系我"
+    },
+    "skills": "技能",
+    "experience": "经历",
+    "featuredProjects": "精选项目",
+    "featuredDescription": "精选作品与业余项目。",
+    "featuredViewAll": "查看全部项目",
+    "cta": {
+      "title": "一起合作吧",
+      "description": "我始终对有趣的机会和合作持开放态度。欢迎随时联系！",
+      "button": "联系我"
+    }
+  },
+  "a11y": {
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  }
+}

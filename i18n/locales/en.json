@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "projects": "Projects",
+    "essays": "Essays",
+    "contact": "Contact"
+  },
+  "footer": {
+    "links": "Links",
+    "social": "Social",
+    "copyright": "© {year} {name}. All rights reserved."
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Technical articles, tutorials, and thoughts on web development.",
+    "searchPlaceholder": "Search posts...",
+    "noPosts": "No posts found.",
+    "notFound": "Post not found",
+    "allPosts": "← All Posts",
+    "previousPost": "Previous Post",
+    "nextPost": "Next Post",
+    "relatedPosts": "Related Posts",
+    "minRead": "{minutes} min read",
+    "wordCount": "{count} words"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Things I've built — from web apps to CLI tools and open-source libraries.",
+    "noProjects": "No projects found.",
+    "notFound": "Project not found",
+    "allProjects": "← All Projects"
+  },
+  "essays": {
+    "title": "Essays",
+    "description": "Personal essays and musings — thoughts on technology, life, and everything in between.",
+    "noEssays": "No essays yet.",
+    "notFound": "Essay not found",
+    "allEssays": "← All Essays"
+  },
+  "about": {
+    "title": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "connect": "Connect"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a question or want to work together? Send me a message.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "honeypot": "Leave this empty"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "waitBeforeSubmit": "Please wait a moment before submitting.",
+      "error": "Something went wrong. Please try again.",
+      "sendFailed": "Failed to send message. Please try again."
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out. I'll get back to you as soon as possible."
+    },
+    "social": {
+      "title": "Connect With Me",
+      "description": "Find me on these platforms or send an email directly."
+    }
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "home": {
+    "hero": {
+      "viewProjects": "View Projects",
+      "getInTouch": "Get in Touch"
+    },
+    "skills": "Skills",
+    "experience": "Experience",
+    "featuredProjects": "Featured Projects",
+    "featuredDescription": "Selected work and side projects.",
+    "featuredViewAll": "View All Projects",
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "I'm always open to interesting opportunities and collaborations. Feel free to reach out!",
+      "button": "Contact Me"
+    }
+  },
+  "a11y": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  }
+}

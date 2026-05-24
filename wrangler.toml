@@ -1,0 +1,16 @@
+name = "personal-website"
+compatibility_date = "2026-05-23"
+pages_build_output_dir = "dist"
+
+# Cloudflare Pages environment variables (set via dashboard or GitHub Actions vars):
+#   SITE_URL          - public production URL, e.g. https://yourdomain.com
+#   CONTACT_TO_EMAIL  - site owner email for contact form delivery
+#   RESEND_TO_EMAIL   - optional alias for CONTACT_TO_EMAIL
+#   RESEND_API_KEY    - optional API key for contact form email delivery
+#
+# SITE_URL is intentionally not set in [env.production]. Cloudflare Pages receives
+# it from GitHub Actions vars and/or Pages environment variables.
+#
+# Secrets set via GitHub Actions secrets:
+#   CLOUDFLARE_API_TOKEN  — Cloudflare API token with Pages edit permission
+#   CLOUDFLARE_ACCOUNT_ID — Cloudflare account ID
