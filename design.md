@@ -248,6 +248,7 @@ Liked / 喜欢:
 - Hero, photography, skills, experience, and featured projects should share one continuous background system; do not restart a separate gradient at section boundaries.
 - Avoid local hero-bottom masks or overlays that are clipped at the section edge and create a visible horizontal line before photography.
 - Photography sections should default to a white-to-black gradient. When hovering/focusing an image, the background should shift to a white-to-image-dominant-color gradient rather than a flat color jump.
+- Photography hover/focus color should continue into the following skills/experience area, so the image color field feels spatial and not cut off at the next section.
 - Text that appears as the user scrolls in and softens/disappears when it leaves the viewport.
 - Image motion during scroll: subtle float, scale, lift, soft blur-to-sharp, or depth changes.
 - ReactBits-style motion language such as Scroll Reveal, Scroll Float, Fade Content, and image trail/parallax ideas, adapted to Vue/Nuxt without adding React-only dependencies.
@@ -260,6 +261,7 @@ Disliked / 不要:
 - Abrupt background jumps between white, gray, black, and card grids.
 - A visible middle seam where the top of the page is white and the lower image section suddenly turns black.
 - A second hard seam where photography ends and the skills/experience/projects color field begins.
+- Hover color overlays that stop exactly at the photography section boundary while the next section keeps the old dark background.
 - Static image grids with no scroll response.
 - Text that simply appears already placed with no entrance/exit rhythm.
 - Heavy cards or boxed panels that make the page feel like a dashboard.
