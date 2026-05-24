@@ -2,8 +2,6 @@
 const { locale } = useI18n()
 const localePath = useLocalePath()
 
-const activeIndex = ref<number | null>(null)
-
 const copy = computed(() => {
   if (locale.value === 'zh') {
     return {
@@ -24,63 +22,48 @@ const copy = computed(() => {
 
 const studies = [
   {
+    tone: 'soft',
     title: 'Soft Portrait',
     meta: 'Opening subject',
     image: '/images/hero-subject.jpg',
     href: '/about',
     accent: '#f1ded8',
-    foreground: '#171313',
   },
   {
+    tone: 'interface',
     title: 'Interface Glow',
     meta: 'Project light',
     image: '/images/projects/personal-web.png',
     href: '/projects/personal-website',
     accent: '#057a62',
-    foreground: '#f5f3ed',
   },
   {
+    tone: 'warm',
     title: 'Warm System',
     meta: 'Tool texture',
     image: '/images/projects/cli-task.png',
     href: '/projects/cli-task-manager',
     accent: '#ff4b22',
-    foreground: '#160704',
   },
   {
+    tone: 'blue',
     title: 'Blue Archive',
     meta: 'Technical note',
     image: '/images/blog/typescript.png',
     href: '/blog/typescript-best-practices-2026',
     accent: '#0b73ff',
-    foreground: '#06111f',
   },
 ]
-
-const activeStudy = computed(() =>
-  activeIndex.value === null ? null : studies[activeIndex.value],
-)
-
-const sectionStyle = computed(() => ({
-  '--photo-accent': activeStudy.value?.accent || '#050505',
-  '--photo-overlay-opacity': activeStudy.value ? 1 : 0,
-  '--photo-fg': activeStudy.value?.foreground || '#f5f3ed',
-}))
-
-function setActive(index: number | null) {
-  activeIndex.value = index
-}
 </script>
 
 <template>
   <section
     id="photography"
     class="photo-showcase relative -mt-16 overflow-hidden pb-20 pt-36 text-[var(--photo-fg)] transition-colors duration-500 sm:pb-28 sm:pt-44"
-    :style="sectionStyle"
   >
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.13),transparent_42%)]" />
+    <div class="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.13),transparent_42%)]" />
 
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:items-end">
         <div class="max-w-sm">
           <p class="text-sm font-medium text-current/55">
@@ -105,13 +88,8 @@ function setActive(index: number | null) {
             <NuxtLink
               :to="localePath(study.href)"
               :data-accent="study.accent"
+              :data-photo-tone="study.tone"
               class="group block outline-none"
-              @mouseenter="setActive(index)"
-              @pointerenter="setActive(index)"
-              @mouseleave="setActive(null)"
-              @pointerleave="setActive(null)"
-              @focus="setActive(index)"
-              @blur="setActive(null)"
             >
               <figure class="photo-card">
                 <div class="overflow-hidden rounded-[1.75rem] bg-black/20 shadow-[0_24px_80px_rgba(0,0,0,0.22)]">

@@ -215,6 +215,8 @@
 
 .photo-showcase {
   --photo-accent: #050505;
+  --photo-accent-rgb: 5 5 5;
+  --photo-fg: #f5f3ed;
   --photo-overlay-opacity: 0;
   isolation: isolate;
   background: transparent;
@@ -224,22 +226,53 @@
     color 320ms ease;
 }
 
+.photo-showcase:has([data-photo-tone="soft"]:is(:hover, :focus-visible, :focus-within)) {
+  --photo-accent: #f1ded8;
+  --photo-accent-rgb: 241 222 216;
+  --photo-fg: #171313;
+  --photo-overlay-opacity: 1;
+}
+
+.photo-showcase:has([data-photo-tone="interface"]:is(:hover, :focus-visible, :focus-within)) {
+  --photo-accent: #057a62;
+  --photo-accent-rgb: 5 122 98;
+  --photo-fg: #f5f3ed;
+  --photo-overlay-opacity: 1;
+}
+
+.photo-showcase:has([data-photo-tone="warm"]:is(:hover, :focus-visible, :focus-within)) {
+  --photo-accent: #ff4b22;
+  --photo-accent-rgb: 255 75 34;
+  --photo-fg: #160704;
+  --photo-overlay-opacity: 1;
+}
+
+.photo-showcase:has([data-photo-tone="blue"]:is(:hover, :focus-visible, :focus-within)) {
+  --photo-accent: #0b73ff;
+  --photo-accent-rgb: 11 115 255;
+  --photo-fg: #06111f;
+  --photo-overlay-opacity: 1;
+}
+
 .photo-showcase::before {
   position: absolute;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   content: "";
   opacity: var(--photo-overlay-opacity, 0);
   background:
-    radial-gradient(circle at 68% 20%, rgba(255, 255, 255, 0.18), transparent 32rem),
+    radial-gradient(circle at 68% 20%, rgba(255, 255, 255, 0.72), transparent 30rem),
+    radial-gradient(circle at 82% 34%, rgb(var(--photo-accent-rgb) / 0.78), transparent 34rem),
+    radial-gradient(circle at 18% 72%, rgb(var(--photo-accent-rgb) / 0.46), transparent 32rem),
     linear-gradient(
       180deg,
-      #f7f7f4 0%,
-      color-mix(in srgb, #f7f7f4 76%, var(--photo-accent)) 20%,
-      color-mix(in srgb, #f7f7f4 42%, var(--photo-accent)) 44%,
-      color-mix(in srgb, #050505 12%, var(--photo-accent)) 72%,
-      var(--photo-accent) 100%
+      rgba(247, 247, 244, 0.96) 0%,
+      rgb(var(--photo-accent-rgb) / 0.42) 24%,
+      rgb(var(--photo-accent-rgb) / 0.76) 64%,
+      rgb(var(--photo-accent-rgb) / 0.94) 100%
     );
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .photo-card img {
