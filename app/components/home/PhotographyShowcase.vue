@@ -62,7 +62,8 @@ const activeStudy = computed(() =>
 )
 
 const sectionStyle = computed(() => ({
-  '--photo-bg': activeStudy.value?.accent || '#050505',
+  '--photo-accent': activeStudy.value?.accent || '#050505',
+  '--photo-overlay-opacity': activeStudy.value ? 1 : 0,
   '--photo-fg': activeStudy.value?.foreground || '#f5f3ed',
 }))
 
@@ -133,7 +134,7 @@ function setActive(index: number | null) {
                       {{ study.meta }}
                     </p>
                   </div>
-                  <span class="rounded-full border border-current/20 px-3 py-1 text-xs text-current/64 transition group-hover:bg-current group-hover:text-[var(--photo-bg)] group-focus-visible:bg-current group-focus-visible:text-[var(--photo-bg)]">
+                  <span class="rounded-full border border-current/20 px-3 py-1 text-xs text-current/64 transition group-hover:bg-current group-hover:text-[var(--photo-accent)] group-focus-visible:bg-current group-focus-visible:text-[var(--photo-accent)]">
                     <UiKineticText :text="copy.open" />
                   </span>
                 </figcaption>

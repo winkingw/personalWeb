@@ -244,6 +244,8 @@ The home page should feel like one continuous scene while scrolling, not a stack
 Liked / 喜欢:
 
 - A continuous page-level gradient that slowly shifts from the light glass hero into darker editorial colors and then into the next content mood.
+- The hero-to-photography transition should read as one long white-to-black gradient, without a hard horizontal boundary between the light subject scene and the dark image showcase.
+- Photography sections should default to a white-to-black gradient. When hovering/focusing an image, the background should shift to a white-to-image-dominant-color gradient rather than a flat color jump.
 - Text that appears as the user scrolls in and softens/disappears when it leaves the viewport.
 - Image motion during scroll: subtle float, scale, lift, soft blur-to-sharp, or depth changes.
 - ReactBits-style motion language such as Scroll Reveal, Scroll Float, Fade Content, and image trail/parallax ideas, adapted to Vue/Nuxt without adding React-only dependencies.
@@ -254,6 +256,7 @@ Disliked / 不要:
 
 - Homepage sections that look like separate flat bands stacked one after another.
 - Abrupt background jumps between white, gray, black, and card grids.
+- A visible middle seam where the top of the page is white and the lower image section suddenly turns black.
 - Static image grids with no scroll response.
 - Text that simply appears already placed with no entrance/exit rhythm.
 - Heavy cards or boxed panels that make the page feel like a dashboard.

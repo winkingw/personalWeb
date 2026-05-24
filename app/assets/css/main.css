@@ -22,6 +22,18 @@
   --color-accent-hover: var(--theme-accent-hover);
 }
 
+@property --photo-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #050505;
+}
+
+@property --photo-overlay-opacity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 /* Light theme (default) */
 :root {
   --theme-bg-base: #ffffff;
@@ -198,13 +210,40 @@
 }
 
 .photo-showcase {
+  --photo-accent: #050505;
+  --photo-overlay-opacity: 0;
   background:
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.18), transparent 34rem),
     linear-gradient(
       180deg,
-      transparent 0%,
-      var(--photo-bg, #050505) 12%,
-      var(--photo-bg, #050505) 88%,
-      transparent 100%
+      #f7f7f4 0%,
+      #efeee9 14%,
+      #c9ccc5 30%,
+      #525756 52%,
+      #121313 76%,
+      #050505 100%
+    );
+  transition:
+    --photo-accent 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    --photo-overlay-opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 320ms ease;
+}
+
+.photo-showcase::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: var(--photo-overlay-opacity, 0);
+  background:
+    radial-gradient(circle at 68% 20%, rgba(255, 255, 255, 0.18), transparent 32rem),
+    linear-gradient(
+      180deg,
+      #f7f7f4 0%,
+      color-mix(in srgb, #f7f7f4 76%, var(--photo-accent)) 20%,
+      color-mix(in srgb, #f7f7f4 42%, var(--photo-accent)) 44%,
+      color-mix(in srgb, #050505 12%, var(--photo-accent)) 72%,
+      var(--photo-accent) 100%
     );
 }
 
