@@ -1,17 +1,22 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +29,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: latest
+          version: 10
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -35,23 +40,28 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Validate deployment variables
-        run: |
-          if [ -z "$SITE_URL" ]; then
-            echo "SITE_URL GitHub Actions variable is required."
-            exit 1
-          fi
+      - name: Build static site
+        run: pnpm generate
         env:
-          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_URL: https://winkingw.github.io/personalWeb/
+          NUXT_APP_BASE_URL: /personalWeb/
 
-      - name: Build (SSG)
-        run: npx nuxi generate
-        env:
-          SITE_URL: ${{ vars.SITE_URL }}
+      - name: Add Pages marker
+        run: New-Item -ItemType File -Path dist/.nojekyll -Force
+        shell: pwsh
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist/ --project-name=personal-website --branch=main
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

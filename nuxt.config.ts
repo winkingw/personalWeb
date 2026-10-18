@@ -2,7 +2,8 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineNuxtConfig } from 'nuxt/config'
 
-const siteUrl = process.env.SITE_URL || 'https://personal-web.local'
+const siteUrl = process.env.SITE_URL || 'https://winkingw.github.io/personalWeb/'
+const appBaseURL = process.env.NUXT_APP_BASE_URL || '/personalWeb/'
 
 const baseSitemapRoutes = [
   '/',

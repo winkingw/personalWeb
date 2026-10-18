@@ -1,4 +1,4 @@
-const siteUrl = process.env.SITE_URL || 'https://personal-web.local'
+const siteUrl = process.env.SITE_URL || 'https://winkingw.github.io/personalWeb/'
 
 export default defineAppConfig({
   site: {
