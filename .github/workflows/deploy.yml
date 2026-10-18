@@ -50,13 +50,13 @@ jobs:
           NUXT_APP_BASE_URL: /personalWeb/
 
       - name: Add Pages marker
-        run: New-Item -ItemType File -Path dist/.nojekyll -Force
+        run: New-Item -ItemType File -Path .output/public/.nojekyll -Force
         shell: pwsh
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .output/public
 
   deploy:
     needs: build

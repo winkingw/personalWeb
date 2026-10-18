@@ -123,7 +123,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'static',
     prerender: {
       crawlLinks: true,
       routes: [
